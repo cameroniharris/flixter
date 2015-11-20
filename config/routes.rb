@@ -55,4 +55,7 @@ Flixter::Application.routes.draw do
   #     resources :products
   #   end
   root 'static_pages#index'
+  namespace :instructor do
+    resources :courses, :only => [:new, :create, :show]
+  end
 end
