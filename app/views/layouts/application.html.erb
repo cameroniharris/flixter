@@ -33,6 +33,7 @@
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	      	<% if user_signed_in? %>
+	      	  <li><%= link_to 'My Dashboard', dashboard_path %></li>
 	      	  <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
 	      	<% else %>
 	      	   <li><%= link_to 'Sign in', new_user_session_path %></li>
@@ -50,13 +51,51 @@
 	</div>
 	<br class="clr" />
 	
-	<div id="footer">
-	  <div class="container">
-	    <b>Teachers</b>
-	    <br />
-	    <%= link_to 'Teach a Course', new_instructor_course_path %>
-	  </div>
-	</div>
-
+  <div id="footer">
+    <div class="container">
+      <div class="col-xs-12 col-sm-3">
+        <b>Teachers</b>
+        <br />
+        <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <br />
+        <%= link_to 'My Dashboard', dashboard_path %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>About</b>
+        <br />
+        <%= link_to 'Team', '#' %>
+        <br />
+        <%= link_to 'Careers', '#' %>
+        <br />
+       <%= link_to 'Privacy Policy', privacy_path %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <b>Contact</b>
+        <br />
+        
+        <br />
+        
+        <br />
+        
+      </div>
+    <div class="col-xs-12 col-sm-3 social">
+      <b>Social</b>
+      <br class="clr"/>
+      <br class="clr"/>
+      
+      <%= link_to 'https://github.com/cameroniharris' do %>
+        <%= image_tag 'github.png', :class => 'social-button' %>
+      <% end %>
+      
+        <%= image_tag 'facebook.png', :class => 'social-button' %>
+      
+      
+        <%= image_tag 'twitter.png', :class => 'social-button' %>
+      
+    </div>
+    
+  </div>
+</div>
+  
 </body>
 </html>
